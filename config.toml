@@ -1,5 +1,7 @@
 enable-module-update = true # set this to false if you do not want to receive updates for the module
 parallel-jobs = 1
+remove-rv-integrations-checks = false
+
 
 # add 'enabled = false' for not patching a specific app or remove it from the config
 # see https://github.com/j-hc/revanced-magisk-module/blob/main/CONFIG.md for more detailed explanations
@@ -41,13 +43,13 @@ archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.a
 # Instagram - Piko
 # =========================
 
-[Instagram-Piko]
+[Instagram]
 app-name = "Instagram"
 patches-source = "crimera/piko"
 cli-source = "MorpheApp/morphe-cli"
 rv-brand = "Piko"
-build-mode = "both"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/instagram/instagram/"
+build-mode = "apk"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/instagram/instagram-instagram/"
 uptodown-dlurl = "https://instagram.en.uptodown.com/android"
 
 
@@ -55,12 +57,12 @@ uptodown-dlurl = "https://instagram.en.uptodown.com/android"
 # Reddit - Morphe
 # =========================
 
-[Reddit-Morphe]
+[Reddit]
 app-name = "Reddit"
 patches-source = "MorpheApp/morphe-patches"
 cli-source = "MorpheApp/morphe-cli"
 rv-brand = "Morphe"
-build-mode = "both"
+build-mode = "apk"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/redditinc/reddit/"
 uptodown-dlurl = "https://reddit-official-app.en.uptodown.com/android"
 archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.reddit.frontpage"
@@ -71,12 +73,12 @@ dpi = "120-640dpi"
 # Facebook - Froggo
 # =========================
 
-[Facebook-Froggo]
+[Facebook]
 app-name = "Facebook"
 patches-source = "SapitoSucio/FroggoMorphePatches"
 cli-source = "MorpheApp/morphe-cli"
 rv-brand = "Froggo"
-build-mode = "both"
+build-mode = "apk"
 version = "573.0.0.37.74"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/facebook-2/facebook/"
 uptodown-dlurl = "https://facebook.en.uptodown.com/android"
@@ -86,12 +88,12 @@ uptodown-dlurl = "https://facebook.en.uptodown.com/android"
 # Telegram - rushiranpise
 # =========================
 
-[Telegram-Morphe]
+[Telegram]
 app-name = "Telegram"
 patches-source = "rushiranpise/morphe-patches"
 cli-source = "MorpheApp/morphe-cli"
 rv-brand = "Morphe"
-build-mode = "both"
+build-mode = "apk"
 version = "12.10.0"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/telegram-fz-llc/telegram/"
 uptodown-dlurl = "https://telegram.en.uptodown.com/android"
@@ -101,10 +103,11 @@ uptodown-dlurl = "https://telegram.en.uptodown.com/android"
 # X / Twitter - Piko
 # =========================
 
-[Twitter-Piko]
+[Twitter]
 app-name = "Twitter"
 patches-source = "crimera/piko"
 cli-source = "MorpheApp/morphe-cli"
 rv-brand = "Piko"
 build-mode = "both"
+version = "12.22.0-prod.01"
 archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.twitter.android"
