@@ -38,21 +38,6 @@ apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music"
 uptodown-dlurl = "https://youtube-music.en.uptodown.com/android"
 archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.apps.youtube.music"
 
-
-# =========================
-# Instagram - Piko
-# =========================
-
-[Instagram]
-app-name = "Instagram"
-patches-source = "crimera/piko"
-cli-source = "MorpheApp/morphe-cli"
-rv-brand = "Piko"
-build-mode = "apk"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/instagram/instagram-instagram/"
-uptodown-dlurl = "https://instagram.en.uptodown.com/android"
-
-
 # =========================
 # Reddit - Morphe
 # =========================
@@ -67,6 +52,21 @@ apkmirror-dlurl = "https://www.apkmirror.com/apk/redditinc/reddit/"
 uptodown-dlurl = "https://reddit-official-app.en.uptodown.com/android"
 archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.reddit.frontpage"
 dpi = "120-640dpi"
+
+# =========================
+# X / Twitter - Piko
+# =========================
+
+[Twitter]
+app-name = "Twitter"
+patches-source = "crimera/piko"
+cli-source = "MorpheApp/morphe-cli"
+rv-brand = "Piko"
+build-mode = "apk"
+version = "12.22.0-prod.01"  
+included-patches = "'NewX: Restore Twitter branding'" 
+archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.twitter.android"
+
 
 
 # =========================
@@ -98,16 +98,15 @@ version = "12.10.0"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/telegram-fz-llc/telegram/"
 uptodown-dlurl = "https://telegram.en.uptodown.com/android"
 
-
 # =========================
-# X / Twitter - Piko
+# Instagram - Piko
 # =========================
 
-[Twitter]
-app-name = "Twitter"
+[Instagram]
+app-name = "Instagram"
 patches-source = "crimera/piko"
 cli-source = "MorpheApp/morphe-cli"
 rv-brand = "Piko"
-build-mode = "both"
-version = "12.22.0-prod.01"
-archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.twitter.android"
+build-mode = "apk"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/instagram/instagram-instagram/"
+uptodown-dlurl = "https://instagram.en.uptodown.com/android"
