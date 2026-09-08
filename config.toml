@@ -6,6 +6,10 @@ parallel-jobs = 1
 
 # you can use rvmm-config-gen to generate a config
 
+# =========================
+# YouTube - Morphe
+# =========================
+
 [YouTube-Morphe]
 app-name = "YouTube"
 patches-source = "MorpheApp/morphe-patches"
@@ -15,6 +19,11 @@ build-mode = "both"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube"
 uptodown-dlurl = "https://youtube.en.uptodown.com/android"
 archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.youtube"
+
+
+# =========================
+# YouTube Music - Morphe
+# =========================
 
 [Music-Morphe]
 app-name = "Music"
@@ -27,49 +36,75 @@ apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music"
 uptodown-dlurl = "https://youtube-music.en.uptodown.com/android"
 archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.apps.youtube.music"
 
-[Reddit-Morphe]
-app-name = "Reddit"
-rv-brand = "Morphe"
-build-mode = "both"
-patches-source = "MorpheApp/morphe-patches"
-cli-source = "MorpheApp/morphe-cli"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/redditinc/reddit/"
-archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.reddit.frontpage"
-uptodown-dlurl = "https://reddit-official-app.en.uptodown.com/android"
-dpi = "120-640dpi"
 
-[GooglePhotos]
-build-mode = "both"
-patches-source = "RookieEnough/De-Vanced"
-rv-brand = "DeVanced"
-cli-source = "MorpheApp/morphe-cli"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/photos/"
-archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.apps.photos"
+# =========================
+# Instagram - Piko
+# =========================
 
-[Twitter]
-patches-source = "crimera/piko-newx"
+[Instagram-Piko]
+app-name = "Instagram"
+patches-source = "crimera/piko"
 cli-source = "MorpheApp/morphe-cli"
 rv-brand = "Piko"
+build-mode = "both"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/instagram/instagram/"
+uptodown-dlurl = "https://instagram.en.uptodown.com/android"
+
+
+# =========================
+# Reddit - Morphe
+# =========================
+
+[Reddit-Morphe]
+app-name = "Reddit"
+patches-source = "MorpheApp/morphe-patches"
+cli-source = "MorpheApp/morphe-cli"
+rv-brand = "Morphe"
+build-mode = "both"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/redditinc/reddit/"
+uptodown-dlurl = "https://reddit-official-app.en.uptodown.com/android"
+archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.reddit.frontpage"
+dpi = "120-640dpi"
+
+
+# =========================
+# Facebook - Froggo
+# =========================
+
+[Facebook-Froggo]
+app-name = "Facebook"
+patches-source = "SapitoSucio/FroggoMorphePatches"
+cli-source = "MorpheApp/morphe-cli"
+rv-brand = "Froggo"
+build-mode = "both"
+version = "573.0.0.37.74"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/facebook-2/facebook/"
+uptodown-dlurl = "https://facebook.en.uptodown.com/android"
+
+
+# =========================
+# Telegram - rushiranpise
+# =========================
+
+[Telegram-Morphe]
+app-name = "Telegram"
+patches-source = "rushiranpise/morphe-patches"
+cli-source = "MorpheApp/morphe-cli"
+rv-brand = "Morphe"
+build-mode = "both"
+version = "12.10.0"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/telegram-fz-llc/telegram/"
+uptodown-dlurl = "https://telegram.en.uptodown.com/android"
+
+
+# =========================
+# X / Twitter - Piko
+# =========================
+
+[Twitter-Piko]
+app-name = "Twitter"
+patches-source = "crimera/piko"
+cli-source = "MorpheApp/morphe-cli"
+rv-brand = "Piko"
+build-mode = "both"
 archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.twitter.android"
-version = "12.22.0-prod.01"
-included-patches = "'NewX: Restore Twitter branding'"
-
-[Music]
-enabled = false
-build-mode = "both"
-arch = "both"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music"
-uptodown-dlurl = "https://youtube-music.en.uptodown.com/android"
-archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.apps.youtube.music"
-
-[YouTube]
-enabled = false
-build-mode = "both"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube"
-uptodown-dlurl = "https://youtube.en.uptodown.com/android"
-archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.youtube"
-
-[Twitch]
-enabled = false
-apkmirror-dlurl = "https://www.apkmirror.com/apk/twitch-interactive-inc/twitch/"
-uptodown-dlurl = "https://twitch.en.uptodown.com/android"
