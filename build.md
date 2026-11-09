@@ -1,6 +1,7 @@
 Music-Morphe (arm64-v8a): 9.30.53  
 Music-Morphe (arm-v7a): 9.30.53  
 Reddit: 2026.40.0  
+Twitter: 12.41.0-prod.01  
 YouTube-Morphe (arm64-v8a): 21.30.216  
 YouTube-Morphe (arm-v7a): 21.30.216  
 
