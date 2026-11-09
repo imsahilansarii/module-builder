@@ -18,6 +18,7 @@ patches-source = "MorpheApp/morphe-patches"
 cli-source = "MorpheApp/morphe-cli"
 rv-brand = "Morphe"
 build-mode = "both"
+arch = "both"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube"
 uptodown-dlurl = "https://youtube.en.uptodown.com/android"
 archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.youtube"
@@ -28,7 +29,7 @@ archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.y
 # =========================
 
 [Music-Morphe]
-app-name = "Music"
+app-name = "YouTube Music"
 patches-source = "MorpheApp/morphe-patches"
 cli-source = "MorpheApp/morphe-cli"
 rv-brand = "Morphe"
@@ -62,9 +63,7 @@ app-name = "Twitter"
 patches-source = "crimera/piko"
 cli-source = "MorpheApp/morphe-cli"
 rv-brand = "Piko"
-build-mode = "apk"
-version = "12.22.0-prod.01"  
-included-patches = "'NewX: Restore Twitter branding'" 
+build-mode = "apk" 
 archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.twitter.android"
 
 
