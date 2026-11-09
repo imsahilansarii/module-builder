@@ -797,7 +797,7 @@ build_rv() {
 		local base_template
 		base_template=$(mktemp -d -p "$TEMP_DIR")
 		cp -a $MODULE_TEMPLATE_DIR/. "$base_template"
-		local upj="${table,,}-update.json"
+		local upj="${table,,}-update.json"; upj="${upj// /-}"; upj="${upj//(/}"; upj="${upj//)/}"
 
 		module_config "$base_template" "$pkg_name" "$version" "$arch"
 
@@ -863,7 +863,7 @@ module_prop() {
 name=${2}
 version=v${3}
 versionCode=${NEXT_VER_CODE}
-author=j-hc
+author=imsahilansarii
 description=${4}" >"${6}/module.prop"
 
 	if [ "$ENABLE_MODULE_UPDATE" = true ]; then echo "updateJson=${5}" >>"${6}/module.prop"; fi
