@@ -63,7 +63,8 @@ app-name = "Twitter"
 patches-source = "crimera/piko"
 cli-source = "MorpheApp/morphe-cli"
 rv-brand = "Piko"
-build-mode = "apk" 
+build-mode = "apk"
+version = "12.41.0-prod.01"
 archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.twitter.android"
 
 
