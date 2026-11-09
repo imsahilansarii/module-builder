@@ -116,42 +116,39 @@ jobs:
             echo "no changes!"
           fi
 
-      - name: Report to Telegram
+      - name: Upload Direct Files to Telegram
         env:
           TG_TOKEN: ${{ secrets.TG_TOKEN }}
           TG_CHAT: ${{ secrets.TG_CHAT_ID }}
+          TG_API_ID: ${{ secrets.TG_API_ID }}
+          TG_API_HASH: ${{ secrets.TG_API_HASH }}
         if: env.TG_TOKEN != '' && env.TG_CHAT != ''
         run: |
+          API_URL="https://api.telegram.org"
+
+          if [ -n "$TG_API_ID" ] && [ -n "$TG_API_HASH" ]; then
+            echo "Starting Local Telegram Bot API server for >50MB files..."
+            docker run -d --name telegram-bot-api -p 8081:8081 \
+              -v "$PWD/build:$PWD/build" \
+              -e TELEGRAM_API_ID="$TG_API_ID" \
+              -e TELEGRAM_API_HASH="$TG_API_HASH" \
+              -e TELEGRAM_LOCAL=1 \
+              aiogram/telegram-bot-api:latest
+            sleep 5
+            curl -s "https://api.telegram.org/bot${TG_TOKEN}/logOut" || true
+            sleep 2
+            API_URL="http://localhost:8081"
+          fi
+
           cd build || { echo "build folder not found"; exit 1; }
 
-          NL=$'\n'
-          APKS=""
-          MODULES=""
-          for OUTPUT in *; do
-            DL_URL="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/releases/download/${{ steps.next_ver_code.outputs.NEXT_VER_CODE }}/${OUTPUT}"
-            if [[ $OUTPUT = *.apk ]]; then
-              APKS+="${NL}📦[${OUTPUT}](${DL_URL})"
-            elif [[ $OUTPUT = *.zip ]]; then
-              MODULES+="${NL}📦[${OUTPUT}](${DL_URL})"
-            fi
-          done
-          MODULES=${MODULES#"$NL"}
-          APKS=${APKS#"$NL"}
-
           BODY="$(sed 's/^\* \*\*/↪ \*\*/g; s/^\* `/↪ \*\*/g; s/`/\*/g; s/^\* /\↪/g; s/\*\*/\*/g; s/###//g; s/^- /↪ /g; /^==/d;' ../build.md)"
-          MSG="*New build!*
+          MSG="*New Build Release (v${{ steps.next_ver_code.outputs.NEXT_VER_CODE }})*
 
-          ${BODY}
-
-          *▼ Download Links:*
-          Modules:
-          ${MODULES}
-
-          APKs:
-          ${APKS}
-          "
+          ${BODY}"
           MSG=${MSG:0:4000}
-          curl -s -X POST "https://api.telegram.org/bot${TG_TOKEN}/sendMessage" \
+
+          curl -s -X POST "${API_URL}/bot${TG_TOKEN}/sendMessage" \
             --data-urlencode "parse_mode=Markdown" \
             --data-urlencode "disable_web_page_preview=true" \
             --data-urlencode "text=${MSG}" \
@@ -159,9 +156,9 @@ jobs:
 
           for FILE in *.zip *.apk; do
             [ -f "$FILE" ] || continue
-            FILE_SIZE=$(stat -c%s "$FILE")
-            if [ "$FILE_SIZE" -lt 52000000 ]; then
-              curl -s -F "chat_id=${TG_CHAT}" -F "document=@${FILE}" -F "caption=📦 ${FILE}" \
-                "https://api.telegram.org/bot${TG_TOKEN}/sendDocument"
-            fi
+            echo "Uploading $FILE to Telegram..."
+            curl -s -X POST "${API_URL}/bot${TG_TOKEN}/sendDocument" \
+              -F "chat_id=${TG_CHAT}" \
+              -F "document=@$PWD/${FILE}" \
+              -F "caption=📦 ${FILE}"
           done
