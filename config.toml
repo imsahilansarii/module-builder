@@ -60,7 +60,7 @@ dpi = "120-640dpi"
 
 [Twitter]
 app-name = "Twitter"
-patches-source = "crimera/piko"
+patches-source = "crimera/piko-newx"
 cli-source = "MorpheApp/morphe-cli"
 rv-brand = "Piko"
 build-mode = "apk"
