@@ -1,6 +1,6 @@
 {
-  "version": "v21.30.216 (patches 2.2.0.mpp)",
-  "versionCode": 21,
-  "zipUrl": "https://github.com/imsahilansarii/module-builder/releases/download/21/youtube-morphe-module-v21.30.216-arm-v7a.zip",
+  "version": "v21.30.216 (patches 2.3.0.mpp)",
+  "versionCode": 22,
+  "zipUrl": "https://github.com/imsahilansarii/module-builder/releases/download/22/youtube-morphe-module-v21.30.216-arm-v7a.zip",
   "changelog": "https://raw.githubusercontent.com/imsahilansarii/module-builder/update/build.md"
 }
